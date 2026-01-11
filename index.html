@@ -679,48 +679,50 @@ soient simples ou complexes, en tenant compte de la ventilation et de l’éclai
           </div>
 
           <div class="col-lg-7">
-            <form  id="contactForm" class="php-email-form"  >
-              <div class="row gy-4">
+             <form  
+  id="contactForm" 
+  class="php-email-form"
+  action="https://script.google.com/macros/s/AKfycbzX-qFsivoDhT6FKutyAz0ot_6bApYBS7uSa7SjX5Z3PW-GjUwapWHoeteEjaNP-N5a/exec"
+  method="POST"
+>
+  <div class="row gy-4">
 
-                <div class="col-md-6">
-                  <label for="name-field" class="pb-2">Your Name</label>
-                  <input type="text" name="name" id="name-field" placeholder="الاسم شخصي"  class="form-control" required="">
-                </div>
+    <div class="col-md-6">
+      <label for="name-field" class="pb-2">Your Name</label>
+      <input type="text" name="name" id="name-field" placeholder="الاسم شخصي" class="form-control" required>
+    </div>
 
-                <div class="col-md-6">
-                  <label for="email-field" class="pb-2">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email-field" placeholder=" البريد لالكتروني  "  required="">
-                </div>
- 
-<div class="col-md-12">
-  <label for="subject-field" class="pb-2">الموضوع / Sujet</label>
-  <select class="form-control" name="subject" id="typeofservice" required>
-    <option value="" disabled selected>اختر نوع الخدمة / Choisissez le type de service</option>
-    <option value="amstrong">امسترونج / Amstrong</option>
-    <option value="plater">الجبص البلدي / Plâtre traditionnel</option>
-    <option value="palco_plater">الجبص بورد / Placo Plâtre</option>
-  </select>
-</div>
- 
+    <div class="col-md-6">
+      <label for="email-field" class="pb-2">Your Email</label>
+      <input type="email" class="form-control" name="email" id="email-field" placeholder=" البريد الإلكتروني " required>
+    </div>
 
+    <div class="col-md-12">
+      <label for="subject-field" class="pb-2">الموضوع / Sujet</label>
+      <select class="form-control" name="typeofservice" id="typeofservice" required>
+        <option value="" disabled selected>اختر نوع الخدمة / Choisissez le type de service</option>
+        <option value="amstrong">امسترونج / Amstrong</option>
+        <option value="plater">الجبص البلدي / Plâtre traditionnel</option>
+        <option value="palco_plater">الجبص بورد / Placo Plâtre</option>
+      </select>
+    </div>
 
+    <div class="col-md-12">
+      <label for="message-field" class="pb-2">Message</label>
+      <textarea class="form-control" name="message" rows="10" placeholder="الرسالة او ملاحظة" id="message-field" required></textarea>
+    </div>
 
+    <div class="col-md-12 text-center">
+      <div class="loading">Loading</div>
+      <div class="error-message"></div>
+      <div class="sent-message">Your message has been sent. Thank you!</div>
 
-                <div class="col-md-12">
-                  <label for="message-field" class="pb-2">Message</label>
-                  <textarea class="form-control" name="message" rows="10" placeholder="الرسالة او ملاحظة"  id="message-field" required=""></textarea>
-                </div>
+      <button type="submit">Send Message</button>
+    </div>
 
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
+  </div>
+</form>
 
-                  <button type="submit">Send Message</button>
-                </div>
-
-              </div>
-            </form>
           </div><!-- End Contact Form -->
 
         </div>

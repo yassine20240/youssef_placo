@@ -239,46 +239,29 @@
 
 
 
-const form = document.getElementById('contactForm');
-const loadingDiv = form.querySelector('.loading');
-const errorDiv = form.querySelector('.error-message');
-const successDiv = form.querySelector('.sent-message');
+ 
+ 
+ 
+ function doPost(e) {
+  try {
+    var spreadsheetId = "1w9PGCVW70XxnqrwgoDN98txNy-FjjpVKcEzEMgK4T5E"; // ID الخاص بك
+    var sheet = SpreadsheetApp.openById(spreadsheetId).getActiveSheet();
 
-const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzX-qFsivoDhT6FKutyAz0ot_6bApYBS7uSa7SjX5Z3PW-GjUwapWHoeteEjaNP-N5a/exec";
-// https://script.google.com/macros/s/AKfycbzX-qFsivoDhT6FKutyAz0ot_6bApYBS7uSa7SjX5Z3PW-GjUwapWHoeteEjaNP-N5a/exec
-form.addEventListener('submit', function(e) {
-  e.preventDefault();
+    sheet.appendRow([
+      e.parameter.name,
+      e.parameter.email,
+      e.parameter.typeofservice,
+      e.parameter.message,
+      new Date()
+    ]);
 
-  loadingDiv.style.display = 'block';
-  errorDiv.style.display = 'none';
-  successDiv.style.display = 'none';
+    return ContentService
+      .createTextOutput(JSON.stringify({ result: "success" }))
+      .setMimeType(ContentService.MimeType.JSON);
 
-  const formData = {
-    name: form.name.value,
-    email: form.email.value,
-    typeofservice: form.typeofservice.value,
-    message: form.message.value
-  };
-
-  fetch(WEB_APP_URL, {
-    method: "POST",
-    body: JSON.stringify(formData)
-  })
-  .then(res => res.json())
-  .then(data => {
-    loadingDiv.style.display = 'none';
-    if(data.status === "success") {
-      successDiv.style.display = 'block';
-      form.reset();
-    } else {
-      errorDiv.textContent = "حدث خطأ، حاول مرة أخرى.";
-      errorDiv.style.display = 'block';
-    }
-  })
-  .catch(err => {
-    console.error(err);
-    loadingDiv.style.display = 'none';
-    errorDiv.textContent = "خطأ في الاتصال بالخادم.";
-    errorDiv.style.display = 'block';
-  });
-});
+  } catch (error) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ result: "error", message: error }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
