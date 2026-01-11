@@ -244,9 +244,8 @@ const loadingDiv = form.querySelector('.loading');
 const errorDiv = form.querySelector('.error-message');
 const successDiv = form.querySelector('.sent-message');
 
-// هذا هو رابط Web App الخاص بك
-const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyB-9s46lC_EqWyRjjrFrJF-W8HPFPtxMInoPn5Pc4lYgWqXbKUtFFE2vmbIm7FosVU/exec";
-
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzX-qFsivoDhT6FKutyAz0ot_6bApYBS7uSa7SjX5Z3PW-GjUwapWHoeteEjaNP-N5a/exec";
+// https://script.google.com/macros/s/AKfycbzX-qFsivoDhT6FKutyAz0ot_6bApYBS7uSa7SjX5Z3PW-GjUwapWHoeteEjaNP-N5a/exec
 form.addEventListener('submit', function(e) {
   e.preventDefault();
 
