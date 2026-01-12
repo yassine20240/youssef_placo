@@ -265,3 +265,6 @@
       .setMimeType(ContentService.MimeType.JSON);
   }
 }
+
+
+// was is the def between app script and table or script in general 
