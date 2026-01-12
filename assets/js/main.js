@@ -240,31 +240,21 @@
 
 
  
- 
- 
- function doPost(e) {
-  try {
-    var spreadsheetId = "1w9PGCVW70XxnqrwgoDN98txNy-FjjpVKcEzEMgK4T5E"; // ID الخاص بك
-    var sheet = SpreadsheetApp.openById(spreadsheetId).getActiveSheet();
+     document.getElementById("contactForm").addEventListener("submit", function(e){
+  e.preventDefault(); // منع إعادة تحميل الصفحة
 
-    sheet.appendRow([
-      e.parameter.name,
-      e.parameter.email,
-      e.parameter.typeofservice,
-      e.parameter.message,
-      new Date()
-    ]);
+  const formData = new FormData(this);
 
-    return ContentService
-      .createTextOutput(JSON.stringify({ result: "success" }))
-      .setMimeType(ContentService.MimeType.JSON);
-
-  } catch (error) {
-    return ContentService
-      .createTextOutput(JSON.stringify({ result: "error", message: error }))
-      .setMimeType(ContentService.MimeType.JSON);
-  }
-}
-
-
-// was is the def between app script and table or script in general 
+  fetch(this.action, {
+    method: "POST",
+    body: formData
+  })
+  .then(response => response.text())
+  .then(result => {
+    alert("تم الإرسال بنجاح!");
+    this.reset(); // إعادة تعيين الفورم
+  })
+  .catch(error => {
+    alert("حدث خطأ: " + error);
+  });
+});
