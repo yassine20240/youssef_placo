@@ -237,24 +237,44 @@
 })();
 
 
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+  e.preventDefault();
 
+  const form = this;
+  const formData = new FormData(form);
 
- 
-     document.getElementById("contactForm").addEventListener("submit", function(e){
-  e.preventDefault(); // منع إعادة تحميل الصفحة
+  const loading = form.querySelector(".loading");
+  const sentMessage = form.querySelector(".sent-message");
+  const errorMessage = form.querySelector(".error-message");
 
-  const formData = new FormData(this);
+  // reset messages
+  loading.style.display = "block";
+  sentMessage.style.display = "none";
+  errorMessage.style.display = "none";
 
-  fetch(this.action, {
+  fetch(form.action, {
     method: "POST",
-    body: formData
+    body: formData,
   })
-  .then(response => response.text())
-  .then(result => {
-    alert("تم الإرسال بنجاح!");
-    this.reset(); // إعادة تعيين الفورم
-  })
-  .catch(error => {
-    alert("حدث خطأ: " + error);
-  });
+    .then((response) => response.text())
+    .then((result) => {
+      loading.style.display = "none";
+      sentMessage.style.display = "block";
+      form.reset();
+    })
+    .catch((error) => {
+      loading.style.display = "none";
+      errorMessage.textContent = "وقع خطأ، حاول مرة أخرى.";
+      errorMessage.style.display = "block";
+    });
 });
+
+
+
+
+
+
+
+
+
+
