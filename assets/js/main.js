@@ -273,5 +273,24 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
 
 
 
+ 
+  const hero = document.querySelector('.hero');
+
+  const images = [
+    'hero.jpeg',
+    'hero2.jpeg',
+    'hero3.jpeg',
+    'hero1.jpeg',
+ 
+  
+  ];
+
+  let index = 0;
+
+  setInterval(() => {
+    hero.style.backgroundImage = `url(${images[index]})`;
+    index = (index + 1) % images.length;
+  }, 3000);
+ 
 
 
