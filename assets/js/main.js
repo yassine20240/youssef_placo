@@ -1,10 +1,3 @@
-/**
-* Template Name: BizLand
-* Template URL: https://bootstrapmade.com/bizland-bootstrap-business-template/
-* Updated: Dec 05 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
 (function() {
   "use strict";
@@ -104,6 +97,10 @@
   }
   window.addEventListener('load', aosInit);
 
+
+
+
+  
   /**
    * Initiate glightbox
    */

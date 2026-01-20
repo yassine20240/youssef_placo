@@ -1722,3 +1722,98 @@ ul li{
 .error-message {
   color: #ef4444;
 }
+/* ================= HERO CUSTOM ================= */
+.hero-custom {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background-color);
+}
+
+/* Slider */
+.hero-custom-carousel {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-custom-carousel .carousel-item {
+  height: 100vh;
+  position: relative;
+}
+
+.hero-custom-carousel .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-custom-carousel .carousel-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 1;
+}
+
+/* Controls */
+.hero-custom-prev-icon,
+.hero-custom-next-icon {
+  width: 54px;
+  height: 54px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+}
+
+/* Controls */
+.hero-custom-prev-icon,
+.hero-custom-next-icon {
+  width: 54px;
+  height: 54px;
+  background-color: rgb(20, 8, 8); /* خلفية بيضاء */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* ظل خفيف optional */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* السهم الداخلي أبيض */
+.hero-custom-prev-icon::before,
+.hero-custom-next-icon::before {
+  color: #ffffff;   /* السهم أبيض */
+  font-size: 26px;
+  line-height: 1;
+  position: relative;
+  top: 2px; /* يحرك السهم قليلاً للأسفل */
+}
+.whatsapp-btn {
+  position: fixed;
+  right: 15px;
+  bottom: 70px; /* أعلى زر scroll-top */
+  z-index: 99999;
+  background-color: #25D366; /* لون WhatsApp الأخضر */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.whatsapp-btn i {
+  font-size: 28px;
+  color: #ffffff;
+}
+
+.whatsapp-btn:hover {
+  background-color: #20b95a; /* داكن قليلا عند hover */
+  transform: translateY(-2px);
+}

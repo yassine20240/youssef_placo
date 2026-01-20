@@ -195,7 +195,7 @@
       <div class="col-lg-4 col-md-6" data-aos="fade-up">
         <div class="service-item position-relative">
            <div class="service-img">
-            <img src="./travail/travail1.jpg" class="img-fluid" alt="Habillage murs">
+            <img src="./travail/travial16 (4).jpeg" class="img-fluid" alt="Habillage murs">
           </div>
           <h3>Cloisons en plaques de plâtre (BA13)</h3>
           <p>
@@ -219,6 +219,7 @@
             <li>تشطيب نظيف ومستقيم</li>
             <li>احترام الآجال المتفق عليها</li>
           </ul>
+          <a href="servicedetails.html">en savoir plus</a>
         </div>
       </div><!-- End Service Item -->
 
@@ -349,10 +350,8 @@
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section dark-background">
-
-<img src="/travail/testimonials-bg.jpg" alt="">
+      <img src="/travail/testimonials-bg.jpg" class="testimonials-bg" alt="">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="swiper init-swiper">
           <script type="application/json" class="swiper-config">
             {
@@ -451,7 +450,6 @@ Travail propre, équipe ponctuelle et très professionnelle. Les travaux de plac
           </div>
           <!-- <div class="swiper-pagination"></div> -->
         </div>
-
       </div>
 
     </section><!-- /Testimonials Section -->
@@ -679,60 +677,137 @@ Travail propre, équipe ponctuelle et très professionnelle. Les travaux de plac
 
       <div class="col-lg-7">
         <form  
-          id="contactForm"
-          action="https://script.google.com/macros/s/AKfycbxfhaiO2gJznVWxjoyOVONLgTlg0x3eoPWMEn-GoMJ3SlWQlXIY8KY2Wnq8XtyJmg7O/exec"
-          method="POST"
+  id="contactForm"
+  action="https://script.google.com/macros/s/AKfycbxfhaiO2gJznVWxjoyOVONLgTlg0x3eoPWMEn-GoMJ3SlWQlXIY8KY2Wnq8XtyJmg7O/exec"
+  method="POST"
+>
+  <div class="row gy-4">
+
+    <!-- الاسم -->
+    <div class="col-md-6">
+      <label for="name-field" class="pb-2">Votre Nom</label>
+      <input
+        type="text"
+        name="name"
+        id="name-field"
+        placeholder="الاسم الشخصي"
+        class="form-control"
+        required
+      >
+    </div>
+
+    <!-- رقم الهاتف -->
+    <div class="col-md-6">
+      <label for="phone-field" class="pb-2">Votre numéro</label>
+      <input
+        type="tel"
+        class="form-control"
+        name="phone"
+        id="phone-field"
+        placeholder="رقم الهاتف"
+        required
+      >
+    </div>
+
+    <!-- طريقة التواصل (Radio) -->
+    <div class="col-md-12">
+      <label class="pb-2 d-block">
+        طريقة التواصل / Mode de contact
+      </label>
+
+      <div class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="contact_method"
+          id="contact-call"
+          value="call"
+          required
         >
-          <div class="row gy-4">
+        <label class="form-check-label" for="contact-call">
+          اتصال هاتفي / Appel
+        </label>
+      </div>
 
-            <div class="col-md-6">
-              <label for="name-field" class="pb-2">Votre Nom</label>
-              <input type="text" name="name" id="name-field" placeholder="الاسم شخصي" class="form-control" required>
-            </div>
+      <div class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="contact_method"
+          id="contact-whatsapp"
+          value="whatsapp"
+        >
+        <label class="form-check-label" for="contact-whatsapp">
+          واتساب / WhatsApp
+        </label>
+      </div>
 
-            <div class="col-md-6">
-              <label for="email-field" class="pb-2">Votre Email</label>
-              <input type="email" class="form-control" name="email" id="email-field" placeholder="البريد الإلكتروني" required>
-            </div>
+      
+    </div>
 
-            <div class="col-md-12">
-              <label for="subject-field" class="pb-2">ا ختر نوع الخدمة </label>
-              <select class="form-control" name="typeofservice" id="typeofservice" required>
-                <option value="" disabled selected>اختر نوع الخدمة / Choisissez le type de service</option>
-                <option value="amstrong">امسترونج / Amstrong</option>
-                <option value="plater">الجبص البلدي / Plâtre traditionnel</option>
-                <option value="palco_plater">الجبص بورد / Placo Plâtre</option>
-              </select>
-            </div>
+    <!-- نوع الخدمة -->
+    <div class="col-md-12">
+      <label for="typeofservice" class="pb-2">
+        اختر نوع الخدمة / Type de service
+      </label>
+      <select
+        class="form-control"
+        name="typeofservice"
+        id="typeofservice"
+        required
+      >
+        <option value="" disabled selected>
+          اختر نوع الخدمة / Choisissez le type de service
+        </option>
+        <option value="amstrong">أمسترونغ / Armstrong</option>
+        <option value="platre_trad">الجبص البلدي / Plâtre traditionnel</option>
+        <option value="placo">الجبص بورد / Placo Plâtre</option>
+      </select>
+    </div>
 
+    <!-- نوع المشروع -->
+    <div class="col-md-12">
+      <label for="project-type" class="pb-2">
+        نوع المشروع / Type de projet
+      </label>
+      <input
+        type="text"
+        class="form-control"
+        name="project_type"
+        id="project-type"
+        placeholder="نوع المشروع (منزل، محل، شركة...)"
+        required
+      >
+    </div>
 
+    <!-- الرسالة -->
+    <div class="col-md-12">
+      <label for="message-field" class="pb-2">Message</label>
+      <textarea
+        class="form-control"
+        name="message"
+        rows="10"
+        placeholder="الرسالة أو ملاحظة"
+        id="message-field"
+        required
+      ></textarea>
+    </div>
 
-             <div class="col-md-12">
-  <label for="subject-field" class="pb-2">نوع السكن / Type de logement</label>
-  <select class="form-control" id="subject-field" name="typeofservice" required>
-    <option value="" disabled selected>اختر نوع السكن / Choisissez le type de logement</option>
-    <option value="appartement_meuble">شقة مفروشة / Appartement meublé</option>
-    <option value="studio">ستوديو / Studio</option>
-    <option value="chambre_partagee">برطمة / Chambre partagée</option>
-    <option value="villa">فيلا / Villa</option>
-  </select>
-</div>
+    <!-- الإرسال -->
+    <div class="col-md-12 text-center">
+      <div class="loading">Chargement</div>
+      <div class="error-message"></div>
+      <div class="sent-message">
+        Votre message a été envoyé. Merci !
+      </div>
+      <button type="submit" class="btn-get-started">
+        Envoyer le message
+      </button>
+    </div>
 
+  </div>
+</form>
 
-            <div class="col-md-12">
-              <label for="message-field" class="pb-2">Message</label>
-              <textarea class="form-control" name="message" rows="10" placeholder="الرسالة او ملاحظة" id="message-field" required></textarea>
-            </div>
-
-            <div class="col-md-12 text-center">
-              <div class="loading">Chargement</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Votre message a été envoyé. Merci !</div>
-              <button type="submit" class="btn-get-started">Envoyer le message</button>
-            </div>
-
-          </div>
-        </form>
       </div><!-- End Contact Form -->
 
     </div>
@@ -808,6 +883,10 @@ Travail propre, équipe ponctuelle et très professionnelle. Les travaux de plac
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/1234567890" target="_blank" id="whatsapp-btn" class="whatsapp-btn d-flex align-items-center justify-content-center">
+  <i class="bi bi-whatsapp"></i>
+</a>
 
   <!-- Preloader -->
   <div id="preloader">
